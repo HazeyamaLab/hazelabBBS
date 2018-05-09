@@ -33,7 +33,7 @@ public class UpdateBbsServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String bbsTitle = request.getParameter("bbsTitle");
+		String bbsTitle = request.getParameter("title");
 		String description = request.getParameter("description");
 		String bbsId = request.getParameter("bbsId");
 		Bbs bbs = new Bbs();

@@ -5,17 +5,28 @@
 <%@ page import = "model.Bbs" %>
 <%@ page import = "java.util.List" %>
 <% List<Bbs> bbsList = (ArrayList<Bbs>)request.getAttribute("bbs"); %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html lang="ja">
 <head>
+<!-- CSS -->
 <link rel="stylesheet" href="/hazelabBBS/css/bootstrap.min.css">
 <link  rel="stylesheet" href="/hazelabBBS/font/css/open-iconic-bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>BBS</title>
 </head>
 <body>
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="/hazelabBBS/bbs">HazeLabBBS</a>
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		</ul>
+		<a class="btn btn-warning" href="/hazelabBBS/logout" >ログアウト</a>
+</nav>
+<br>
+<!-- コンテンツ -->
 <div class="container">
-<h1 class="page-header">新規BBSの作成</h1>
+<h2 class="page-header">新規BBSの作成</h2>
+<hr>
 	<form action="/hazelabBBS/bbs" method="post">
 		<div class="form-group">
 			<label for="title">掲示板タイトル</label>
@@ -29,7 +40,8 @@
 			<button type="submit" class="btn btn-primary">投稿</button>
 		</div>
 	</form>
-<h2>作成済みBBS:<%=bbsList.size() %>件</h2>
+<% if(bbsList.size() > 0) { %>
+<h2 class="page-header">作成済みBBS:<%=bbsList.size() %>件</h2>
 <hr>
 	<% for(Bbs bbs : bbsList) { %>
 	<div class="card border-secondary mb-3">
@@ -47,6 +59,12 @@
 	</div>
 	</div>
 	<% } %>
+<% }else{ %>
+<hr>
+<div class="alert alert-warning">
+	掲示板はありません．
+</div>
+<% } %>
 </div>
 <!-- javascript -->
 <script type="text/javascript" src="/hazelabBBS/js/jquery-3.2.1.min.js"></script>

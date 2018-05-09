@@ -2,25 +2,47 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "model.Post" %>
 <% Post post = (Post)request.getAttribute("post"); %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
+<!-- CSS -->
+<link rel="stylesheet" href="/hazelabBBS/css/bootstrap.min.css">
+<link  rel="stylesheet" href="/hazelabBBS/font/css/open-iconic-bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>掲示板編集</title>
 </head>
 <body>
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="/hazelabBBS/bbs">HazeLabBBS</a>
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		</ul>
+		<a class="btn btn-warning" href="/hazelabBBS/logout" >ログアウト</a>
+</nav>
+<br>
+<!-- コンテンツ -->
+<div class="container">
+<h2 class="page-header">投稿内容の編集</h2>
+<hr>
 <form action="/hazelabBBS/bbs/post/update" method="post">
-<label>投稿タイトル</label>
-	<br>
-	<input type="text" name="title" value="<%=post.getTitle() %>">
-	<br>
-	<label>投稿内容</label>
-	<br>
-	<textarea name="body" rows="5" cols="60"><%=post.getBody() %></textarea>
-	<br>
-	<input type="submit" value="編集" >
-	<input type="hidden" name="postId" value="<%=post.getPostId() %>">
-	<input type="hidden" name="bbsId" value="<%=post.getBbsId() %>" >
+	<div class="form-group">
+		<label for="title">投稿タイトル</label>
+		<input class="formcontrol" type="text" name="title" id="title" value="<%=post.getTitle() %>">
+	</div>
+	<div class="form-group">
+		<label for="body">投稿内容</label>
+		<textarea class="form-control" name="body" id="body" rows="5" cols="60"><%=post.getBody() %></textarea>
+	</div>
+	<div class="form-group">
+		<input type="hidden" name="postId" value="<%=post.getPostId() %>">
+		<input type="hidden" name="bbsId" value="<%=post.getBbsId() %>" >
+		<button type="submit" class="btn btn-primary">編集</button>
+	</div>
 </form>
+</div>
+<!-- javascript -->
+<script type="text/javascript" src="/hazelabBBS/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/hazelabBBS/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>

@@ -1,14 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
+<!-- CSS -->
+<link rel="stylesheet" href="/hazelabBBS/css/bootstrap.min.css">
+<link  rel="stylesheet" href="/hazelabBBS/font/css/open-iconic-bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>トップページ</title>
 </head>
-<body>
-	ようこそ，HazeLab BBSへ
+<body class="text-center">
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="/hazelabBBS/">HazeLabBBS</a>
+</nav>
+<br>
+<!-- コンテンツ -->
+<div class="container">
+	<h1 class="page-header">Welcome to HazeLabBBS!</h1>
+	<p class="lead">ようこそ，HazeLab BBSへ</p>
 	<br>
-	ログインは<a href="/hazelabBBS/login" >こちら</a>から
+	<a href="/hazelabBBS/login" class="btn btn-primary" >Get Strat</a>
+</div>
+<!-- javascript -->
+<script type="text/javascript" src="/hazelabBBS/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/hazelabBBS/js/bootstrap.min.js"></script>
 </body>
 </html>

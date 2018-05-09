@@ -1,15 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
+<!-- CSS -->
 <link rel="stylesheet" href="/hazelabBBS/css/bootstrap.min.css">
+<link  rel="stylesheet" href="/hazelabBBS/font/css/open-iconic-bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ログイン</title>
 </head>
 <body>
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="/hazelabBBS/">HazeLabBBS</a>
+</nav>
+<br>
+<!-- コンテンツ -->
 <div class="container">
-	<h1>ログイン</h1>
+	<h1 class="page-header">ログイン</h1>
 	<form action="/hazelabBBS/login" method ="post">
 		<div class="form-group">
 			<label for="userId" >ユーザー名</label>
@@ -20,8 +28,10 @@
 			<input class="form-control" type="password" name="password" id="password" >
 		</div>
 		<button class="btn btn-primary" type="submit">ログイン</button>
-		<p class="mt-5 mb-3 text-muted">&copy; Hazelab-2018</p>
 	</form>
 </div>
+<!-- javascript -->
+<script type="text/javascript" src="/hazelabBBS/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/hazelabBBS/js/bootstrap.min.js"></script>
 </body>
 </html>

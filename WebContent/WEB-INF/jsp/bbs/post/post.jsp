@@ -5,25 +5,30 @@
 <%@ page import = "java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% List<Post> postList = (ArrayList<Post>)request.getAttribute("posts"); %>
+<% List<Post> posts = (ArrayList<Post>)request.getAttribute("posts"); %>
 <% Bbs bbs = (Bbs)request.getAttribute("bbs"); %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <link rel="stylesheet" href="/hazelabBBS/css/bootstrap.min.css">
 <link  rel="stylesheet" href="/hazelabBBS/font/css/open-iconic-bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title><%=bbs.getTitle() %></title>
 </head>
 <body>
+<!-- ナビゲーションバー -->
 <nav class="navbar navbar-dark bg-dark">
-<a class="navbar-brand" href="/hazelabBBS/bbs">HazeLabBBS</a>
+		<a class="navbar-brand" href="/hazelabBBS/bbs">HazeLabBBS</a>
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		</ul>
+		<a class="btn btn-warning" href="/hazelabBBS/logout" >ログアウト</a>
 </nav>
 <br>
+<!-- コンテンツ -->
 <div class="container">
-<h1><%=bbs.getTitle() %></h1>
+<h2 class="page-header"><%=bbs.getTitle() %></h2>
 <hr>
-<h4>新規投稿</h4>
+<h4 class="page-header">新規投稿</h4>
 <form action="/hazelabBBS/bbs/post" method="post" >
 	<div class="form-group">
 		<label for="title">投稿タイトル</label>
@@ -39,8 +44,8 @@
 	</div>
 </form>
 <hr>
-<% if(postList.size() > 0) { %>
-<% for(Post post : postList){ %>
+<% if(posts.size() > 0) { %>
+<% for(Post post : posts){ %>
 <div class="card">
 	<div class="card-header">
 		<%=post.getContributorId() %> さんの書き込み
@@ -63,9 +68,13 @@
 <% } %>
 <% }else{ %>
 <div class="alert alert-warning">
-投稿はありません．
+	投稿はありません．
 </div>
 <% } %>
 </div>
+<!-- javascript -->
+<script type="text/javascript" src="/hazelabBBS/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/hazelabBBS/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>
