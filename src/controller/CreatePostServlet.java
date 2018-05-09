@@ -45,7 +45,6 @@ public class CreatePostServlet extends HttpServlet {
 		String title = request.getParameter("title");
 		String body = request.getParameter("body");
 		String bbsId = request.getParameter("bbsId");
-		System.out.println(Integer.parseInt(bbsId));
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("user");
 		Post post = new Post();
