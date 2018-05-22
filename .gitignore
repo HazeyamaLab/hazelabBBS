@@ -1,3 +1,10 @@
+# intelli j
+/.idea/
+/tmp/
+/bin/
+*.test
+*.swp
+
 ### https://raw.github.com/github/gitignore/f1d5981dd5b0ebf95617d73b93c628c2bd741267/Java.gitignore
 
 # Compiled class file
@@ -90,7 +97,8 @@ local.properties
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
