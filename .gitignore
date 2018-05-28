@@ -5,6 +5,11 @@
 *.test
 *.swp
 
+# Eclipse
+.project
+.classpath
+.settings
+
 ### https://raw.github.com/github/gitignore/f1d5981dd5b0ebf95617d73b93c628c2bd741267/Java.gitignore
 
 # Compiled class file
