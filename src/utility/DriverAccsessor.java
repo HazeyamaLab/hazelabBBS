@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DriverAccsessor {
 	//使用するDBの名前
-	private final static String DRIVER_URL="jdbc:mysql://localhost:3306/hazelabBBS?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
+	private final static String DRIVER_URL="jdbc:mysql://localhost:3306/bbs?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
 
 	private final static String DRIVER_NAME="com.mysql.jdbc.Driver";
 
