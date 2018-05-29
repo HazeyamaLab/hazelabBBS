@@ -20,7 +20,7 @@ import service.PostService;
 @WebServlet("/bbs/post")
 public class CreatePostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 
     public CreatePostServlet() {
         super();
@@ -36,7 +36,7 @@ public class CreatePostServlet extends HttpServlet {
 		Bbs bbs = bbsService.getBbs(Integer.parseInt(bbsId));
 		request.setAttribute("posts", posts);
 		request.setAttribute("bbs", bbs);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs/post/post.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs/post/home.jsp");
 		dispatcher.forward(request, response);
 	}
 	//BBSに投稿

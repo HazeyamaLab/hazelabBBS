@@ -25,7 +25,7 @@ public class CreateBbsServlet extends HttpServlet {
 		BbsService bbsService = new BbsService();
 		List<Bbs> bbs = bbsService.getBbs();
 		request.setAttribute("bbs", bbs);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs/bbs.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs/home.jsp");
 		dispatcher.forward(request, response);
 	}
 	//BBSの新規作成

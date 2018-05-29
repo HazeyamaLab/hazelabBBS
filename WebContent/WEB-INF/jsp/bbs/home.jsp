@@ -30,14 +30,14 @@
 	<form action="/hazelabBBS/bbs" method="post">
 		<div class="form-group">
 			<label for="title">掲示板タイトル</label>
-			<input class="formcontrol" type="text" name="title" id="title">
+			<input class="form-control" type="text" name="title" id="title">
 		</div>
 		<div class="form-group">
 			<label for="description">説明</label>
 			<textarea class="form-control" name="description" id="description" rows="3" cols="60"></textarea>
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-primary">投稿</button>
+			<button type="submit" class="btn btn-primary">作成</button>
 		</div>
 	</form>
 <% if(bbsList.size() > 0) { %>

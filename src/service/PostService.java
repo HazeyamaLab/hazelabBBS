@@ -13,9 +13,9 @@ public class PostService {
 	private Connection connection = null;
 	public PostService() {
 	}
-	
+
 	LocalDateTime dateTime = LocalDateTime.now();
-	
+
 	public List<Post> getPostByBbsId(int bbsId) {
 		PostDao dao = new PostDao();
 		this.connection = dao.createConnection();
@@ -25,24 +25,24 @@ public class PostService {
 		this.connection = null;
 		return posts;
 	}
-	
+
 	public void addPost(Post post) {
 		post.setCreatedAt(dateTime);
-		PostDao postDao = new PostDao();
-		this.connection = postDao.createConnection();
-		postDao.create(post, connection);
-		postDao.closeConnection(connection);
+		PostDao dao = new PostDao();
+		this.connection = dao.createConnection();
+		dao.create(post, connection);
+		dao.closeConnection(connection);
 		this.connection = null;
 	}
-	
+
 	public void deletePostByBbsId(int bbsId) {
-		PostDao postDao = new PostDao();
-		this.connection = postDao.createConnection();
-		postDao.deleteByBbsId(bbsId, connection);
-		postDao.closeConnection(connection);
+		PostDao dao = new PostDao();
+		this.connection = dao.createConnection();
+		dao.deleteByBbsId(bbsId, connection);
+		dao.closeConnection(connection);
 		this.connection = null;
 	}
-	
+
 	public void deletePostByPostId(int postId) {
 		PostDao dao = new PostDao();
 		this.connection = dao.createConnection();
@@ -50,7 +50,7 @@ public class PostService {
 		dao.closeConnection(connection);
 		this.connection = null;
 	}
-	
+
 	public Post getPostByPostId(int postId) {
 		PostDao dao = new PostDao();
 		this.connection = dao.createConnection();
@@ -59,7 +59,7 @@ public class PostService {
 		this.connection = null;
 		return post;
 	}
-	
+
 	public void update(Post post) {
 		PostDao dao = new PostDao();
 		this.connection = dao.createConnection();

@@ -29,6 +29,8 @@
 		</div>
 		<button class="btn btn-primary" type="submit">ログイン</button>
 	</form>
+	<hr>
+	新規ユーザー登録は<a href="/hazelabBBS/user">こちら</a>から
 </div>
 <!-- javascript -->
 <script type="text/javascript" src="/hazelabBBS/js/jquery-3.2.1.min.js"></script>
