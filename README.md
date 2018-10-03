@@ -25,3 +25,20 @@ $ git clone https://github.com/HazeyamaLab/hazelabBBS.git
 3. bulid and run
 
   「実行」 -> 「サーバーで実行」
+
+
+## dockerの使い方
+### dockerfileの場合
+以下で，`Dockerfile`から`image`をつくる．
+```
+$ docker image build -t deploy:latest .
+```
+作った`image`を実行
+```
+docker run -it --privileged -d -p 8080:8080 --name bbs deploy:latest /sbin/init
+```
+
+### Docker-composeの場合
+```
+docker-compose up -d
+```
