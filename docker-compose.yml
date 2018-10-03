@@ -1,0 +1,25 @@
+version: '2' #docker-composeのバージョンを指定
+services:
+    db:
+        image: mysql:5.7 #mysql5.7が準備されているimageを指定
+        ports:
+            - "3306:3306" # <-これがないと外からアクセス出来ない
+        expose:
+            - 3306
+        command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+        environment:
+           MYSQL_ROOT_PASSWORD: bbs #rootのパスワード
+           MYSQL_DATABASE: bbs #revelデータベースの作成
+           MYSQL_USER: bbs #revelユーザの作成
+           MYSQL_PASSWORD: bbs #revelユーザのパスワード
+        volumes:
+            - "./mysql:/docker-entrypoint-initdb.d"
+    web:
+        build: . #Dockerfileをビルド
+        ports:
+            - "8080:8080" #ポート9000番の開放
+        links:
+            - "db:db" #dbとつなげる
+        privileged: true
+        tty: true
+        command: /sbin/init
