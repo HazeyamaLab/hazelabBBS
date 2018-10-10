@@ -15,7 +15,7 @@ services:
         volumes:
             - "./mysql:/docker-entrypoint-initdb.d"
 
-    web:
+    bbs:
         build: . #Dockerfileをビルド
         ports:
             - "8080:8080" #ポート9000番の開放
