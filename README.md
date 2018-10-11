@@ -44,4 +44,4 @@ docker-compose up -d
 ```
 
 ## CD
-やって見る
+やって見た
