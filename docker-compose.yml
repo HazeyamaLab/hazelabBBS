@@ -4,8 +4,6 @@ services:
         build: . #Dockerfileをビルド
         ports:
             - "7080:8080" #ポート9000番の開放
-        links:
-            - "db:db" #dbとつなげる
         privileged: true
         tty: true
         command: /sbin/init
