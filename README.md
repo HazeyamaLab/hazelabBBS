@@ -42,3 +42,6 @@ docker run -it --privileged -d -p 8080:8080 --name bbs deploy:latest /sbin/init
 ```
 docker-compose up -d
 ```
+
+## CD
+やって見る
