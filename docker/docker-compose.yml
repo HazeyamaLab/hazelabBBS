@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  bbs:
+    build:
+      context: ../.
+      dockerfile: ./docker/app/Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../.:/hazelabBBS/
+    tty: true
+    command: ./gradlew appRun
+
+  db:
+    build:
+      context: ../.
+      dockerfile: ./docker/mysql/Dockerfile
+    volumes:
+      - ./mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./mysql/init:/docker-entrypoint-initdb.d
+      - mysql_db:/var/lib/mysql
+    environment:
+      TZ: "Asia/Tokyo"
+      MYSQL_DATABASE: bbs
+      MYSQL_USER: bbs
+      MYSQL_PASSWORD: bbs
+      MYSQL_ROOT_PASSWORD: bbs
+    tty: true
+
+volumes:
+  mysql_db: {}
